@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/green"
+  tools:context=".MainActivity">
+
+  <!--Header-->
+  <include layout="@layout/header" android:id="@+id/header"/>
+
+  <!--Navigation buttons-->
+  <TableLayout
+    android:id="@+id/navigationButtons"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/header"
+    android:background="@color/darkGreen"
+    android:paddingHorizontal="30sp"
+    android:paddingVertical="5sp"
+    android:stretchColumns="*">
+
+    <TableRow>
+
+      <Button
+        android:id="@+id/btnTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/notification_badge_dark"
+        android:drawableTop="@drawable/ic_test_tube"
+        android:drawablePadding="5sp"
+        android:fontFamily="sans-serif-light"
+        android:inputType="text"
+        android:padding="10sp"
+        android:stateListAnimator="@null"
+        android:text="Covid test"
+        android:textColor="@color/white"
+        android:textSize="11sp" />
+
+      <Button
+        android:id="@+id/btnShot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/notification_badge"
+        android:drawableTop="@drawable/ic_syringe"
+        android:drawablePadding="5sp"
+        android:fontFamily="sans-serif-light"
+        android:inputType="text"
+        android:padding="10sp"
+        android:stateListAnimator="@null"
+        android:text="Flu shot"
+        android:textColor="@color/white"
+        android:textSize="11sp" />
+
+      <Button
+        android:id="@+id/btnVaccination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/darkGreen"
+        android:drawableTop="@drawable/ic_outline_verified_user_24"
+        android:drawablePadding="5sp"
+        android:fontFamily="sans-serif-light"
+        android:inputType="text"
+        android:padding="10sp"
+        android:stateListAnimator="@null"
+        android:text="Vaccination"
+        android:textColor="@color/white"
+        android:textSize="11sp" />
+    </TableRow>
+  </TableLayout>
+
+  <!--Heading-->
+  <TextView
+    android:id="@+id/heading"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/navigationButtons"
+    android:layout_marginBottom="20sp"
+    android:paddingHorizontal="20sp"
+    android:paddingVertical="10sp"
+    android:textColor="@color/white"
+    android:textSize="30sp"
+    android:textStyle="bold" />
+
+  <!--Description-->
+  <TextView
+    android:id="@+id/description"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/heading"
+    android:layout_marginBottom="20sp"
+    android:fontFamily="sans-serif-light"
+    android:paddingHorizontal="20sp"
+    android:textColor="@color/white"
+    android:textSize="15sp" />
+
+  <!--Results-->
+  <TextView
+    android:id="@+id/resultsTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/description"
+    android:fontFamily="sans-serif-light"
+    android:paddingHorizontal="20sp"
+    android:paddingVertical="5sp"
+    android:textColor="@color/white"
+    android:textSize="15sp" />
+
+  <ListView
+    android:id="@+id/resultsList"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/resultsTitle"
+    android:divider="@color/darkTurquoise"
+    android:dividerHeight="4px"
+    android:paddingHorizontal="20sp"
+    android:paddingBottom="10sp"></ListView>
+
+  <!--Refresh-->
+  <Button
+    android:id="@+id/btnRefresh"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/resultsList"
+    android:layout_centerHorizontal="true"
+    android:backgroundTint="@color/green"
+    android:drawableTop="@drawable/ic_baseline_autorenew_24"
+    android:drawableTint="@color/grey"
+    android:inputType="text"
+    android:padding="15sp"
+    android:stateListAnimator="@null"
+    android:text="Refresh"
+    android:textColor="@color/grey"
+    android:textSize="12sp" />
+
+  <!--Barcode-->
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/btnRefresh"
+    android:background="@drawable/barcode_frame"
+    android:padding="10sp">
+
+    <TextView
+      android:id="@+id/barcodeUserName"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:fontFamily="sans-serif-light"
+      android:padding="10sp"
+      android:textColor="@color/black"
+      android:textSize="20sp" />
+
+    <ImageView
+      android:id="@+id/barcode"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/barcodeUserName" />
+  </RelativeLayout>
+
+</RelativeLayout>
